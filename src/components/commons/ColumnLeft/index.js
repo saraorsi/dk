@@ -1,10 +1,10 @@
-
+import { Column } from './style/ColumnLeft'
 
 export default function ColumnLeft({titleLeft, contentLeft}){
     return(
-        <div>
+        <Column>
             <div>{titleLeft}</div>
             <div>{contentLeft}</div>
-        </div>
+        </Column>
     )
 }

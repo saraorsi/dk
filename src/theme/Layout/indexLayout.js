@@ -11,12 +11,12 @@ export default function Layout({ titleLeft, contentLeft, titleRight, contentRigh
             <ColumnLeft
                 titleLeft={titleLeft}
                 contentLeft={contentLeft}
-            ></ColumnLeft>
-            <ColumnCenter></ColumnCenter>
+            />
+            <ColumnCenter />
             <ColumnRight
                 titleRight={titleRight}
                 contentRight={contentRight}
-            ></ColumnRight>
+            />
             <Sidebar />
         </div>
     )

@@ -1,8 +1,9 @@
+import { SidebarRight } from './style/Sidebar' 
 
 export default function Sidebar(){
     return(
-        <div>
+        <SidebarRight >
             Sidebar
-        </div>
+        </SidebarRight>
     )
 }

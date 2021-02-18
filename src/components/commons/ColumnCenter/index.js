@@ -1,9 +1,9 @@
-
+import { Column } from './style/ColumnCenter'
 
 export default function ColumnCenter(){
     return(
-        <div>
+        <Column>
             Column Center
-        </div>
+        </Column>
     )
 }
