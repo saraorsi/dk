@@ -1,9 +1,12 @@
 import { MenuWrapper } from './style/Menu'
+import Link from 'next/link'
 
 export default function Menu(){
     return(
         <MenuWrapper>
-            hello
+           <Link href="/">
+               <a>DK</a>
+           </Link>
         </MenuWrapper>
     )
 }

@@ -19,7 +19,7 @@ export default function Programa({ sessoes }) {
 
                             {filmes && filmes.map((filme, i) => {
                                 return (
-                                    <SessaoWrapper.Filme>
+                                    <SessaoWrapper.Filme key={i}>
                                         {filme.filme_titulo}
                                     </SessaoWrapper.Filme>
                                 )
