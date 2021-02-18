@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 export default function Debates({ sessoes }) {
 
 
-    console.log(sessoes)
-
     const [debates, setDebates] = useState([]);
     useEffect(async () => {
         await sessoes && sessoes.map(({ debates }) => {
