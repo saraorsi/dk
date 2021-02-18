@@ -11,7 +11,7 @@ export default function Debates({ sessoes }) {
                     <div>
                     {sessao.debates && sessao.debates.map((debate, i) => {
                         return(
-                            <div>{debate.debate_titulo}</div>
+                            <div key={i}>{debate.debate_titulo}</div>
                         )
                     })}
                     </div>
