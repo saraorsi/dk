@@ -15,3 +15,6 @@ SessaoWrapper.Sessao = styled.div`
 
 SessaoWrapper.Filme = styled.div`
 `
+
+SessaoWrapper.Debates = styled.div`
+`
