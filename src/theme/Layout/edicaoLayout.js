@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import ColumnCenter from "../../components/commons/ColumnCenter";
 import ColumnLeft from "../../components/commons/ColumnLeft";
 import ColumnRight from "../../components/commons/ColumnRight";
@@ -6,6 +7,8 @@ import Sidebar from "../../components/commons/Sidebar";
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Link from "next/link";
+
+
 
 
 

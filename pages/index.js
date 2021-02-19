@@ -24,7 +24,7 @@ function Home({ edicoes, destaques }) {
         'Edições'
       }
       contentLeft={edicoes.map((post) => (
-        <li key={post.id} className="menu__list__item">
+        <li key={post.id}>
           <Link href={`/edicoes/${post.slug}`}>
             <a>{post.acf ? post.acf.ano : ''} <span>{post.title.rendered}</span></a>
           </Link>

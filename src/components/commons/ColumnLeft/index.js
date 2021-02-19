@@ -3,8 +3,11 @@ import { Column } from './style/ColumnLeft'
 export default function ColumnLeft({titleLeft, contentLeft}){
     return(
         <Column>
-            <div>{titleLeft}</div>
-            <div>{contentLeft}</div>
+            <Column.Title>
+                <Column.Circle />
+                {titleLeft}
+            </Column.Title>
+            <Column.Content>{contentLeft}</Column.Content>
         </Column>
     )
 }

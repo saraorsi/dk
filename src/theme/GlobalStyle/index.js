@@ -2,11 +2,41 @@ import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
 
 const GlobalStyle = createGlobalStyle`
-    *{
-        box-sizing: border-box;
+    @font-face {
+    font-family: 'Alpina';
+    src:
+        url('/fonts/GT-Alpina-Fine-Condensed-Medium.woff') format('woff'),
+        url('/fonts/GT-Alpina-Fine-Condensed-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
     }
 
+    @font-face {
+    font-family: 'Pathos';
+    src:
+        url('/fonts/Pathos-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    }
     ${normalize}
+
+    *{
+        box-sizing: border-box;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    :root {
+        font-size: 2.5vw;
+        line-height: 1.2em;
+    }
+
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
 
 
     html, body {
@@ -15,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         background-color: ${({ theme }) => theme.colors.background.main.color};
         color: ${({ theme }) => theme.colors.primary.main.color};
+        font-family: 'Alpina';
     }
     #__next {
         flex: 1;

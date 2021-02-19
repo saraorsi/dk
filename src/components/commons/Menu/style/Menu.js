@@ -13,3 +13,20 @@ export const MenuWrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.primary.main.color};
     color: ${({ theme }) => theme.colors.background.main.color};
 `
+
+MenuWrapper.Logo = styled.div`
+    display:block;
+    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg); 
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: -1.9rem;
+    left: 0rem;
+    width: 10rem;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0; 
+    transform-origin: 0 0;
+    line-height: 6.5vw;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+`
