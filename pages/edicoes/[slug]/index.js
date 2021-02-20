@@ -3,14 +3,6 @@ import { useRouter } from 'next/router'
 import { getEdicao } from "../../../lib/api"
 import Notas from '../../../src/components/edicao/Notas'
 
-export async function  getServerSideProps(context) {
-  const edicao = await getEdicao(context.params.slug)
-  return {
-    props: {
-      edicao,
-    },
-  }
-}
 
 function Edicao({edicao}){
     return(
@@ -19,6 +11,26 @@ function Edicao({edicao}){
             contentRight={<Notas content={edicao[0].acf.sinopse} />}
         />
     )
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: {slug: 'floresta-de-signos'},
+    }],
+    fallback: 'blocking'
+  }
+}  
+
+export async function getStaticProps({params}) {
+  const {slug} = params;
+  const edicao = await getEdicao(slug )
+  return {
+    props: {
+      edicao,
+    },
+    revalidate: 10,
+  }
 }
 
 export default Edicao;
