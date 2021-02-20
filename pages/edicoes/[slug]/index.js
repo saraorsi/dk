@@ -14,15 +14,11 @@ function Edicao({edicao}){
     )
 }
 
+
+
 export async function getStaticPaths() {
   const edicoes = await getAllEdicoes()
-
-  const paths = edicoes.map(post => 
-    { 
-      params: { slug: post.slug } 
-    }
- )
-  
+  const paths = edicoes.map( post => ({ params: { slug: post.slug } }))
   return {
     paths,
     fallback: 'blocking'
