@@ -3,16 +3,7 @@ import IndexLayout from '../src/theme/Layout/indexLayout'
 import Link from 'next/link'
 import { getAllEdicoes, getAllDestaques } from '../lib/api'
 
-export async function getStaticProps() {
-  const edicoes = await getAllEdicoes()
-  const destaques = await getAllDestaques()
-  return {
-    props: {
-      edicoes,
-      destaques
-    },
-  }
-}
+
 
 
 function Home({ edicoes, destaques }) {
@@ -38,6 +29,18 @@ function Home({ edicoes, destaques }) {
       ))}
     />
   )
+}
+
+export async function getStaticProps() {
+  const edicoes = await getAllEdicoes()
+  const destaques = await getAllDestaques()
+  return {
+    props: {
+      edicoes,
+      destaques
+    },
+    revalidate: 10
+  }
 }
 
 export default Home;

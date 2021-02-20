@@ -1,6 +1,7 @@
 import EdicaoLayout from "../../../src/theme/Layout/edicaoLayout"
 import { useRouter } from 'next/router'
-import { getEdicao } from "../../../lib/api"
+import { getEdicao, getAllEdicoes} from "../../../lib/api"
+
 import Notas from '../../../src/components/edicao/Notas'
 
 
@@ -14,10 +15,16 @@ function Edicao({edicao}){
 }
 
 export async function getStaticPaths() {
+  const edicoes = await getAllEdicoes()
+
+  const paths = edicoes.map(post => 
+    { 
+      params: { slug: post.slug } 
+    }
+ )
+  
   return {
-    paths: [
-      { params: {slug: 'floresta-de-signos'},
-    }],
+    paths,
     fallback: 'blocking'
   }
 }  
