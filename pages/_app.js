@@ -13,8 +13,11 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider theme={theme}>
       <GlobalStyle />
-        <Component {...pageProps} />
+        <Component {...pageProps}/>
       </ThemeProvider>
     </>
   )
 }
+
+
+
