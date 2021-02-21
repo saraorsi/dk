@@ -13,7 +13,7 @@ QuemFezItem.Equipa = styled.div`
 
 export default function QuemFez({quemFez}) {
    return(
-        <>
+        <div>
         {quemFez && quemFez.map(({funcao, equipa}, i) =>{
             return(
                 <QuemFezItem key={funcao}>
@@ -22,7 +22,7 @@ export default function QuemFez({quemFez}) {
                 </QuemFezItem>
             )
         })}
-        </>
+        </div>
     )
     
 }
