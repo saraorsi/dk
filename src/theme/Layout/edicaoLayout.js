@@ -27,11 +27,13 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
   const menus = [
     {
       link: `/edicoes/${router.query.slug}/notas-de-intencao`,
-      titulo: 'Notas de intenção'
+      titulo: 'Notas de intenção',
+      separador: 'notas-de-intencao'
     },
     {
       link: `/edicoes/${router.query.slug}/programa`,
-      titulo: 'Programa'
+      titulo: 'Programa',
+      separador: 'programa'
     },
     {
       link: `/edicoes/${router.query.slug}/debates`,
@@ -66,7 +68,7 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
       </ColumnLeft>
       <ColumnCenter />
       <ColumnRight
-        titleRight={edicao[0].title.rendered}
+         titleRight={edicao[0].title.rendered}
         contentRight={contentRight}
       />
       <Sidebar />

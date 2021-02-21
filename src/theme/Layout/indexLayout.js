@@ -5,8 +5,8 @@ import Menu from "../../components/commons/Menu";
 import Sidebar from "../../components/commons/Sidebar";
 
 
-function Layout({ titleLeft, contentLeft, titleRight, contentRight, edicoes }) {
-    console.log(edicoes);
+export default function Layout({ titleLeft, contentLeft, titleRight, contentRight }) {
+
     return (
         <div>
             <Menu />
@@ -25,16 +25,4 @@ function Layout({ titleLeft, contentLeft, titleRight, contentRight, edicoes }) {
 }
 
 
-Layout.getInitialProps = async (ctx) => {
-    const edicoes = await getAllEdicoes()
-    const destaques = await getAllDestaques()
-    return {
-      props: {
-        edicoes,
-        destaques
-      },
-      revalidate: 10
-    }
-  }
 
-  export default Layout;
