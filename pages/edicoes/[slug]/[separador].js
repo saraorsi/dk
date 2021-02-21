@@ -29,16 +29,33 @@ export default function Separador({ edicao }) {
 
 
 export async function getStaticPaths() {
-
-  return {
-    paths: [{
-      params: {
-        slug: 'floresta-de-signos',
-        separador: 'programa',
-      }
+  //const edicoes = await getAllEdicoes()
+  const edicoes = [
+    {    
+      slug: 'floresta-de-signos',
+      separador: 'programa'
+    },
+    {    
+      slug: 'floresta-de-signos',
+      separador: 'notas-de-intencao'
+    },
+    {    
+      slug: 'floresta-de-signos',
+      separador: 'debates'
+    },
+    {    
+      slug: 'floresta-de-signos',
+      separador: 'leituras'
+    },
+    {    
+      slug: 'floresta-de-signos',
+      separador: 'quem-fez'
     }
-    ],
-    fallback: true
+  ]
+  const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: post.separador} }))
+  return {
+    paths,
+    fallback: false
   }
 }
 
