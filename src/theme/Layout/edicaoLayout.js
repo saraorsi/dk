@@ -28,12 +28,10 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
     {
       link: `/edicoes/${router.query.slug}/notas-de-intencao`,
       titulo: 'Notas de intenção',
-      separador: 'notas-de-intencao'
     },
     {
       link: `/edicoes/${router.query.slug}/programa`,
       titulo: 'Programa',
-      separador: 'programa'
     },
     {
       link: `/edicoes/${router.query.slug}/debates`,
@@ -56,7 +54,7 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
         contentLeft={
           <ul>
             {menus.map((menu, i) => (
-              <li key={i} className={`menu__list__item ${selected == i ? 'active' : null}`} onClick={() => toggle(i)}>
+              <li key={menu.link} className={`menu__list__item ${selected == i ? 'active' : null}`} onClick={() => toggle(i)}>
                 <Link href={menu.link}>
                   <a>{menu.titulo}</a>
                 </Link>

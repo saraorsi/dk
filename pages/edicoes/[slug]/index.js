@@ -18,6 +18,9 @@ function Edicao({ edicao }) {
   return (
     <EdicaoLayout
     edicao={edicao}
+    contentRight={
+      <Notas content={edicao[0].acf.sinopse} />
+    }
     />
   )
 }
