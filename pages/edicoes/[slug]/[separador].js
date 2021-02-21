@@ -55,13 +55,12 @@ export async function getStaticPaths() {
   const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: post.separador} }))
   return {
     paths,
-    fallback: false
+    fallback: 'blocking'
   }
 }
 
 export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const edicao = await getEdicao('floresta-de-signos')
+  const edicao = await getEdicao(params.slug)
   return {
     props: {
       edicao,

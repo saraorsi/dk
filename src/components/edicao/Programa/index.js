@@ -6,7 +6,7 @@ export default function Programa({ sessoes }) {
 
     return (
         <ProgamaWrapper>
-            {sessoes.map(({ dia, numero, turno, filmes, debates }, i) => {
+            {sessoes && sessoes.map(({ dia, numero, turno, filmes, debates }, i) => {
                 return (
                     <div key={i}>
                         <ProgramaDia>

@@ -8,7 +8,7 @@ export const LeiturasItem = styled.div`
 export default function Leituras({ leituras }) {
     return (
         <div>
-            {leituras.map((leitura, i) =>
+            {leituras && leituras.map((leitura, i) =>
                 <LeiturasItem key={leitura.post_title}>
                     {leitura.post_title}
                 </LeiturasItem>
