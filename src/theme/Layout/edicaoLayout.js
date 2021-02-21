@@ -7,6 +7,7 @@ import Sidebar from "../../components/commons/Sidebar";
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Link from "next/link";
+import Participantes from '../../components/edicao/Participantes';
 
 
 
@@ -24,6 +25,7 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
     }
     setSelected(i)
   }
+
   const menus = [
     {
       link: `/edicoes/${router.query.slug}/notas-de-intencao`,
@@ -46,12 +48,14 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
       titulo: 'Quem Fez'
     },
   ]
+
   return (
     <div>
       <Menu />
       <ColumnLeft
         titleLeft={edicao[0].acf.ano}
         contentLeft={
+          <>
           <ul>
             {menus.map((menu, i) => (
               <li key={menu.link} className={`menu__list__item ${selected == i ? 'active' : null}`} onClick={() => toggle(i)}>
@@ -61,6 +65,8 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
               </li>
             ))}
           </ul>
+          <Participantes participantes={edicao[0].acf.participantes} />
+          </>
         }
       >
       </ColumnLeft>
