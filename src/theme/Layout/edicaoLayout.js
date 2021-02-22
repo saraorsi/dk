@@ -16,6 +16,18 @@ export const MenuWapprer = styled.div`
 `
 
 
+export const Column = styled.div`
+`
+
+Column.Title = styled.div`
+  display: inline-block;
+  font-size: .7rem;
+  vertical-align: top;
+  margin-top: -.2rem;
+  margin-left: .35rem;
+`
+
+
 
 
 function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
@@ -56,7 +68,14 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
     <div>
       <Menu />
       <ColumnLeft
-        titleLeft={edicao[0].acf.ano}
+        titleLeft={
+          <div>
+            <span>{edicao[0].acf.ano}</span>
+            <Column.Title>{edicao[0].acf.datas}</Column.Title>
+          </div>
+        
+        }
+        
         contentLeft={
           <>
           <MenuWapprer>

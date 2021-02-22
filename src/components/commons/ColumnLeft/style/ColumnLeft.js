@@ -20,6 +20,8 @@ Column.Title = styled.div`
   align-items: center;
 `
 
+
+
 Column.Circle = styled.div`
   position: absolute;
   top: .5rem;

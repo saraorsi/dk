@@ -1,7 +1,7 @@
 import IndexLayout from '../src/theme/Layout/indexLayout'
-import Link from 'next/link'
 import { getAllEdicoes, getAllDestaques } from '../lib/api'
 import Destaques from '../src/components/home/Destaques'
+import Menu from '../src/components/home/Menu'
 
 
 
@@ -10,17 +10,15 @@ function Home({ edicoes, destaques }) {
   return (
     <IndexLayout
       titleLeft={
-        'Edições'
+        'edições'
       }
       contentLeft={edicoes.map((post) => (
         <li key={post.id}>
-          <Link href={`/edicoes/${post.slug}`}>
-            <a>{post.acf ? post.acf.ano : ''} <span>{post.title.rendered}</span></a>
-          </Link>
+          <Menu key={post.slug} post={post}  />
         </li>
       ))}
       titleRight={
-        'Destaques'
+        'destaques'
       }
       contentRight={destaques.map(destaque => (
         <Destaques key={destaque.id} destaque={destaque} />

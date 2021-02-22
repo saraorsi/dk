@@ -1,6 +1,6 @@
 import React from 'react'
 import EdicaoLayout from "../../../src/theme/Layout/edicaoLayout"
-import { getEdicao, getAllEdicoes } from "../../../lib/api"
+import { getEdicao, getAllEdicoes, } from "../../../lib/api"
 
 import { useRouter } from 'next/router'
 import Notas from '../../../src/components/edicao/Notas'
@@ -29,8 +29,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const edicao = await getEdicao(slug)
+  const edicao = await getEdicao(params.slug)
   return {
     props: {
       edicao,
@@ -38,5 +37,4 @@ export async function getStaticProps({ params }) {
     revalidate: 10,
   }
 }
-
 export default Edicao;
