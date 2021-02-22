@@ -1,13 +1,11 @@
-
 import IndexLayout from '../src/theme/Layout/indexLayout'
 import Link from 'next/link'
 import { getAllEdicoes, getAllDestaques } from '../lib/api'
-
+import Destaques from '../src/components/home/Destaques'
 
 
 
 function Home({ edicoes, destaques }) {
-
   edicoes.sort((a, b) => (a.acf.ano > b.acf.ano ? -1 : 1))
   return (
     <IndexLayout
@@ -24,8 +22,8 @@ function Home({ edicoes, destaques }) {
       titleRight={
         'Destaques'
       }
-      contentRight={destaques.map(item => (
-        <li key={item.id}>{item.title.rendered}</li>
+      contentRight={destaques.map(destaque => (
+        <Destaques key={destaque.id} destaque={destaque} />
       ))}
     />
   )

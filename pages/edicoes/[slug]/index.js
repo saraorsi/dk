@@ -4,16 +4,10 @@ import { getEdicao, getAllEdicoes } from "../../../lib/api"
 
 import { useRouter } from 'next/router'
 import Notas from '../../../src/components/edicao/Notas'
-import Programa from '../../../src/components/edicao/Programa'
-import Debates from '../../../src/components/edicao/Debates'
-import Leituras from '../../../src/components/edicao/Leituras'
-import QuemFez from '../../../src/components/edicao/QuemFez'
 
 
 function Edicao({ edicao }) {
-
   const router = useRouter()
-
 
   return (
     <EdicaoLayout

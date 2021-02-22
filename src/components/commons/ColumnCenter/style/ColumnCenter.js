@@ -33,6 +33,6 @@ Column.Content = styled.div`
     -moz-transform-origin: 0 0; 
     transform-origin: 0 0;
     line-height: 5.5vw;
-    font-size: .75rem;  
+    font-size: .7rem;  
     text-transform: uppercase;
 `

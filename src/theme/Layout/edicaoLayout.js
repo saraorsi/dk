@@ -11,6 +11,9 @@ import Participantes from '../../components/edicao/Participantes';
 
 
 
+export const MenuWapprer = styled.div`
+    text-transform: uppercase;
+`
 
 
 
@@ -56,7 +59,7 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
         titleLeft={edicao[0].acf.ano}
         contentLeft={
           <>
-          <ul>
+          <MenuWapprer>
             {menus.map((menu, i) => (
               <li key={menu.link} className={`menu__list__item ${selected == i ? 'active' : null}`} onClick={() => toggle(i)}>
                 <Link href={menu.link}>
@@ -64,7 +67,7 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
                 </Link>
               </li>
             ))}
-          </ul>
+          </MenuWapprer>
           <Participantes participantes={edicao[0].acf.participantes} />
           </>
         }

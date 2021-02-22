@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const NotasWrapper = styled.div`
-    padding: 1rem;
+    padding: .6rem 1rem;
 `
 
 export default function Notas({content}) {
