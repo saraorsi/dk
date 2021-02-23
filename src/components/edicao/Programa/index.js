@@ -52,7 +52,6 @@ export default function Programa({ sessoes }) {
                                        {filme.filme_ano ? `, ${filme.filme_ano}` : null}{filme.filme_duracao ? `, ${filme.filme_duracao}min` : null}
                                        </FilmeWrapper.Info>
                                        {filme.realizadores && filme.realizadores.map(realizador => {
-                                                console.log(realizador)
                                                 return (
                                                     <FilmeWrapper.Realizador>{realizador.post_title}</FilmeWrapper.Realizador>
                                                 )})}
