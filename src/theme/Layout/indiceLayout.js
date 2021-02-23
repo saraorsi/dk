@@ -6,7 +6,7 @@ import Sidebar from "../../components/commons/Sidebar";
 import Link from "next/link";
 
 
-export default function Layout({ titleLeft, contentLeft, titleRight, contentRight }) {
+export default function Layout({ titleRight, contentRight }) {
 
     const menus = [
         {
@@ -51,8 +51,8 @@ export default function Layout({ titleLeft, contentLeft, titleRight, contentRigh
             />
             <ColumnCenter />
             <ColumnRight
-                titleRight={titleRight}
-                contentRight={contentRight}
+                titleRight={'hfhfh'}
+                contentRight={'jfjfj'}
             />
             <Sidebar />
         </div>

@@ -1,12 +1,9 @@
-import IndiceLayout from '../../src/theme/Layout/indiceLayout'
+import IndiceLayout from "../../src/theme/Layout/IndiceLayout"
 
 function Indice() {
 
   return (
-    <IndiceLayout
-      titleRight={''}
-      contentRight={'hfhf'}
-    />
+    <IndiceLayout />
   )
 }
 
