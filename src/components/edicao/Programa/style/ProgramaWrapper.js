@@ -50,3 +50,20 @@ margin-top: .3rem;
    font-size: .5rem;
 line-height: 1.3em;
 `
+
+
+export const Accordion = styled.div`
+
+`
+
+Accordion.Btn = styled.div`
+    cursor: pointer
+`
+
+Accordion.Content = styled.div`
+    cursor: pointer;
+    display: none;
+    &.open{
+        display: block;
+    }
+`

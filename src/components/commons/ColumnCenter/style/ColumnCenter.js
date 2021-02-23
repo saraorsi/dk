@@ -8,6 +8,8 @@ export const Column = styled.div`
     height: 100vh;
     border-left: 2px solid ${({ theme }) => theme.colors.primary.main.color};
     border-right: 2px solid ${({ theme }) => theme.colors.primary.main.color};
+    background-color: ${({ theme }) => theme.colors.background.main.color};
+    z-index: 50;
 `
 
 Column.Circle = styled.div`

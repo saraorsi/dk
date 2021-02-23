@@ -28,6 +28,7 @@ Column.Circle = styled.div`
 `
 
 Column.Content = styled.div`
+  width: calc(100% + 16px);
   height: calc(100vh - 6.5vw);
   overflow-y: auto;
   li{
