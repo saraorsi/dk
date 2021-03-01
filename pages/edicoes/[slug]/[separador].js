@@ -27,7 +27,7 @@ export default function Separador({ edicao, realizador }) {
   )
 }
 
-/*
+
 
 export async function getStaticPaths() {
 
@@ -60,8 +60,8 @@ export async function getStaticPaths() {
     fallback: false
   }
 }
-*/
-export async function getServerSideProps({ params }) {
+
+export async function getStaticProps({ params }) {
   const { slug } = params;
   const { separador } = params;
   const edicao = await getEdicao(slug)
@@ -71,6 +71,7 @@ export async function getServerSideProps({ params }) {
       edicao,
       realizador
     },
+    revalidate: 10,
   }
 }
 
