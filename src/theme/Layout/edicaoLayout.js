@@ -70,7 +70,7 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
     },
   ]
 
-  const participantes = edicao[0].acf.participantes;
+  const participantes = edicao && edicao[0].acf.participantes;
   participantes ? participantes.sort((a, b) => (a.post_title > b.post_title ? 1 : -1)) : ''
 
   return (
@@ -79,8 +79,8 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
       <ColumnLeft
         titleLeft={
           <div>
-            <span>{edicao[0].acf.ano}</span>
-            <Column.Title>{edicao[0].acf.datas}</Column.Title>
+            <span>{edicao && edicao[0].acf.ano}</span>
+            <Column.Title>{edicao && edicao[0].acf.datas}</Column.Title>
           </div>
         
         }
@@ -115,7 +115,7 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
       </ColumnLeft>
       <ColumnCenter />
       <ColumnRight
-         titleRight={edicao[0].title.rendered}
+         titleRight={edicao && edicao[0].title.rendered}
         contentRight={contentRight}
       />
       <Sidebar />

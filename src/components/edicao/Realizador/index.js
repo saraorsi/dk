@@ -14,6 +14,7 @@ RealizadorWrapper.Bio = styled.div`
 
 
 export default function Realizador({ realizador }) {
+
     return (
         <RealizadorWrapper>
             <div>{realizador.title.rendered}</div>

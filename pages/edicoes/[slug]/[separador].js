@@ -20,7 +20,7 @@ export default function Separador({ edicao, realizador }) {
               router.query.separador === 'debates' ? <Debates sessoes={edicao[0].acf.sessao_repetidor} /> :
                 router.query.separador === 'leituras' ? <Leituras leituras={edicao[0].acf.leituras} /> :
                   router.query.separador === 'quem-fez' ? <QuemFez quemFez={edicao[0].acf.quem_fez} /> :
-                    <Realizador realizador={realizador[0]} />
+                  realizador &&  <Realizador realizador={realizador[0]} />
         }
       />
     </div>
@@ -99,7 +99,7 @@ export async function getStaticPaths() {
       separador: 'quem-fez'
     }
   ]
-  const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: 'programa'} }))
+  const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: 'notas-de-intencao'} }))
   return {
     paths,
     fallback: true
