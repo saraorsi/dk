@@ -20,7 +20,7 @@ export default function Separador({ edicao, realizador }) {
               router.query.separador === 'debates' ? <Debates sessoes={edicao[0].acf.sessao_repetidor} /> :
                 router.query.separador === 'leituras' ? <Leituras leituras={edicao[0].acf.leituras} /> :
                   router.query.separador === 'quem-fez' ? <QuemFez quemFez={edicao[0].acf.quem_fez} /> :
-                  realizador &&  <Realizador realizador={realizador[0]} />
+                    realizador && <Realizador realizador={realizador[0]} />
         }
       />
     </div>
@@ -83,23 +83,28 @@ export default function Separador({ edicao, realizador }) {
 export async function getStaticPaths() {
   const edicoes = await getAllEdicoes();
   const separadores = [
-    {    
+    {
       separador: 'programa'
     },
-    {    
+    {
       separador: 'notas-de-intencao'
     },
-    {    
+    {
       separador: 'debates'
     },
-    {    
+    {
       separador: 'leituras'
     },
-    {    
+    {
       separador: 'quem-fez'
     }
   ]
-  const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: 'notas-de-intencao'} }))
+  const paths = [];
+  edicoes.forEach(function (edicao) {
+    separadores.forEach(function (separador) {
+      paths.push({ params: { 'slug': edicao.slug, 'separador': separador.separador } })
+    })
+  });
   return {
     paths,
     fallback: true
