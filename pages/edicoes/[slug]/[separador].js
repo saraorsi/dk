@@ -29,57 +29,66 @@ export default function Separador({ edicao, realizador }) {
 
 
 
+// export async function getStaticPaths() {
+
+//   const edicoes = [
+//     {    
+//       slug: 'floresta-de-signos',
+//       separador: 'programa'
+//     },
+//     {    
+//       slug: 'floresta-de-signos',
+//       separador: 'notas-de-intencao'
+//     },
+//     {    
+//       slug: 'floresta-de-signos',
+//       separador: 'debates'
+//     },
+//     {    
+//       slug: 'floresta-de-signos',
+//       separador: 'leituras'
+//     },
+//     {    
+//       slug: 'floresta-de-signos',
+//       separador: 'quem-fez'
+//     },
+//     {    
+//       slug: 'todas-as-fronteiras',
+//       separador: 'programa'
+//     },
+//     {    
+//       slug: 'todas-as-fronteiras',
+//       separador: 'notas-de-intencao'
+//     },
+//     {    
+//       slug: 'todas-as-fronteiras',
+//       separador: 'debates'
+//     },
+//     {    
+//       slug: 'todas-as-fronteiras',
+//       separador: 'leituras'
+//     },
+//     {    
+//       slug: 'todas-as-fronteiras',
+//       separador: 'quem-fez'
+//     }
+//   ]
+//   const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: post.separador} }))
+//   return {
+//     paths,
+//     fallback: false
+//   }
+// }
+
 export async function getStaticPaths() {
-
-
-  const edicoes = [
-    {    
-      slug: 'floresta-de-signos',
-      separador: 'programa'
-    },
-    {    
-      slug: 'floresta-de-signos',
-      separador: 'notas-de-intencao'
-    },
-    {    
-      slug: 'floresta-de-signos',
-      separador: 'debates'
-    },
-    {    
-      slug: 'floresta-de-signos',
-      separador: 'leituras'
-    },
-    {    
-      slug: 'floresta-de-signos',
-      separador: 'quem-fez'
-    },
-    {    
-      slug: 'todas-as-fronteiras',
-      separador: 'programa'
-    },
-    {    
-      slug: 'todas-as-fronteiras',
-      separador: 'notas-de-intencao'
-    },
-    {    
-      slug: 'todas-as-fronteiras',
-      separador: 'debates'
-    },
-    {    
-      slug: 'todas-as-fronteiras',
-      separador: 'leituras'
-    },
-    {    
-      slug: 'todas-as-fronteiras',
-      separador: 'quem-fez'
-    }
-  ]
-  const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: post.separador} }))
+  const edicoes = await getAllEdicoes();
+  const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: 'programa'} }))
   return {
     paths,
-    fallback: false
+    fallback: 'blocking'
   }
 }
+
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
