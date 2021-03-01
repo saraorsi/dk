@@ -82,10 +82,27 @@ export default function Separador({ edicao, realizador }) {
 
 export async function getStaticPaths() {
   const edicoes = await getAllEdicoes();
+  const separadores = [
+    {    
+      separador: 'programa'
+    },
+    {    
+      separador: 'notas-de-intencao'
+    },
+    {    
+      separador: 'debates'
+    },
+    {    
+      separador: 'leituras'
+    },
+    {    
+      separador: 'quem-fez'
+    }
+  ]
   const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: 'programa'} }))
   return {
     paths,
-    fallback: 'blocking'
+    fallback: true
   }
 }
 
