@@ -102,7 +102,7 @@ export async function getStaticPaths() {
   const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: 'programa'} }))
   return {
     paths,
-    fallback: true
+    fallback:false
   }
 }
 
