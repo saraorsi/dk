@@ -2,10 +2,11 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../src/theme'
 import Head from 'next/head';
 import GlobalStyle from '../src/theme/GlobalStyle/'
+import { EdicoesProvider } from '../src/context/EdicoesContext'
 
-
-export default function App({ Component, pageProps }) {
-  return (
+export default function MyApp({ Component, pageProps, stars}) {
+  console.log(stars)
+ return (
     <>
       <Head>
           <title>Doc's Kingdom</title>
@@ -13,7 +14,9 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider theme={theme}>
       <GlobalStyle />
+        <EdicoesProvider stars={stars}>
         <Component {...pageProps}/>
+        </EdicoesProvider>
       </ThemeProvider>
     </>
   )
@@ -21,3 +24,10 @@ export default function App({ Component, pageProps }) {
 
 
 
+MyApp.getInitialProps = async (ctx) => {
+  const res = await fetch('https://api.github.com/repos/vercel/next.js')
+  const json = await res.json()
+  return {  props: {
+      stars: json 
+    }, }
+}

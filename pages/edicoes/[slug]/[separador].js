@@ -27,7 +27,7 @@ export default function Separador({ edicao, realizador }) {
   )
 }
 
-
+/*
 
 export async function getStaticPaths() {
 
@@ -55,76 +55,13 @@ export async function getStaticPaths() {
     }
   ]
   const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: post.separador} }))
-  // const separadores = [
-  //   {
-  //     separador: 'programa'
-  //   },
-  //   {
-  //     separador: 'notas-de-intencao'
-  //   },
-  //   {
-  //     separador: 'debates'
-  //   },
-  //   {
-  //     separador: 'leituras'
-  //   },
-  //   {
-  //     separador: 'quem-fez'
-  //   },
-  // ]
-
-  // const edicoes = await getAllEdicoes();
-  // console.log(edicoes)
-
-  //const paths = edicoes.map(post => ( (separadores.map( (item, i) => {
-  //     ({
-  //       params: {
-  //         slug: 'floresta-de-signos',
-  //         separador: item.separador
-  //       }
-  //     })
-  //   }))
-  // ))
-
-
-  // const paths = separadores.map(separador => {({edicoes.map( edicao => (
-  //     {
-  //       params: {
-  //         slug: 'floresta-de-signos',
-  //         separador: 'separador'
-  //     }
-  //   }
-  // ))})){}
-
-  //const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: post.separador} }))
-
-  // const paths = edicoes.map(post => {
-  //   return (
-
-  //     separadores.map((sep, i) => {
-  //       return (
-  //           {params: { slug: 's', separador: 'se'}
-  //         }
-    
-  //       )
-  //     })
-
-  //   )
-  // })
-
-  // const paths = edicoes.map((post) => {(
-  //   separadores.map((sep) => {(
-  //     console.log(sep.separador)
-  //   )}
-  // ))})
-  // console.log(paths)
   return {
     paths,
-    fallback: 'blocking'
+    fallback: false
   }
 }
-
-export async function getStaticProps({ params }) {
+*/
+export async function getServerSideProps({ params }) {
   const { slug } = params;
   const { separador } = params;
   const edicao = await getEdicao(slug)
@@ -134,7 +71,6 @@ export async function getStaticProps({ params }) {
       edicao,
       realizador
     },
-    revalidate: 10,
   }
 }
 
