@@ -52,6 +52,26 @@ export async function getStaticPaths() {
     {    
       slug: 'floresta-de-signos',
       separador: 'quem-fez'
+    },
+    {    
+      slug: 'todas-as-fronteiras',
+      separador: 'programa'
+    },
+    {    
+      slug: 'todas-as-fronteiras',
+      separador: 'notas-de-intencao'
+    },
+    {    
+      slug: 'todas-as-fronteiras',
+      separador: 'debates'
+    },
+    {    
+      slug: 'todas-as-fronteiras',
+      separador: 'leituras'
+    },
+    {    
+      slug: 'todas-as-fronteiras',
+      separador: 'quem-fez'
     }
   ]
   const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: post.separador} }))

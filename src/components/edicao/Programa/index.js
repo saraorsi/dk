@@ -39,10 +39,7 @@ export default function Programa({ sessoes }) {
                                 const[accordion, setAccordion] = useState(false);
 
                                 function toggle(){
-                                    if (accordion == true) {
-                                      return setAccordion(false)
-                                    }
-                                    setAccordion(true)
+                                    setAccordion(!accordion)
                                   }
                                 return (
                                     <FilmeWrapper key={filme.filme_titulo}>
