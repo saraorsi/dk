@@ -6,10 +6,9 @@ import { useContext } from 'react';
 import { EdicoesContext } from '../src/context/EdicoesContext'
 
 
-function Home({ edicoes, destaques, stars }) {
+function Home({ edicoes, destaques}) {
   const edicoesContext = useContext(EdicoesContext);
   console.log(edicoesContext)
-  console.log(stars);
 
   edicoes.sort((a, b) => (a.acf.ano > b.acf.ano ? -1 : 1))
   return (

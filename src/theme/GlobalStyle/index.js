@@ -2,15 +2,19 @@ import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
 
 const GlobalStyle = createGlobalStyle`
-    @font-face {
-    font-family: 'Alpina';
-    src:
+
+
+    @font-face {  
+        font-family: 'Alpina';  
+        font-weight: 400; 
+        font-style: normal;  
+        font-display: swap; /* Read next point */  
+        unicode-range: U+000-5FF; /* Download only latin glyphs */  
+        src: local('Alpina'),       
         url('/fonts/GT-Alpina-Fine-Condensed-Medium.woff') format('woff'),
         url('/fonts/GT-Alpina-Fine-Condensed-Medium.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap; 
     }
+
 
     @font-face {
     font-family: 'Pathos';

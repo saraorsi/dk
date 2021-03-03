@@ -10,7 +10,6 @@ import Realizador from "../../../src/components/edicao/Realizador"
 
 export default function Separador({ edicao, realizador }) {
   const router = useRouter()
-  console.log(realizador);
   return (
     <div>
       <EdicaoLayout
