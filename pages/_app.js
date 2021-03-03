@@ -11,8 +11,8 @@ export default function MyApp({ Component, pageProps}) {
       <Head>
           <title>Doc's Kingdom</title>
           <meta key="robots" name="robots" content="noindex,follow" />
-          <link rel="preload" as="font" href="/fonts/GT-Alpina-Fine-Condensed-Medium.woff" type="font/woff" crossorigin="anonymous" />
-          <link rel="preload" as="font" href="/fonts/GT-Alpina-Fine-Condensed-Medium.woff2" type="font/woff2" crossorigin="anonymous" />
+          <link rel="preload" as="font" href="/fonts/GT-Alpina-Fine-Condensed-Medium.woff" type="font/woff" crossOrigin="anonymous" />
+          <link rel="preload" as="font" href="/fonts/GT-Alpina-Fine-Condensed-Medium.woff2" type="font/woff2" crossOrigin="anonymous" />
       </Head>
       <ThemeProvider theme={theme}>
       <GlobalStyle />

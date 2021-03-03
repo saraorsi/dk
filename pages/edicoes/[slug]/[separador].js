@@ -8,7 +8,7 @@ import Leituras from '../../../src/components/edicao/Leituras'
 import QuemFez from '../../../src/components/edicao/QuemFez'
 import Realizador from "../../../src/components/edicao/Realizador"
 
-export default function Separador({ edicao, realizador }) {
+export default function Separador({ edicao, realizador, edicoes }) {
   const router = useRouter()
   return (
     <div>
@@ -20,7 +20,7 @@ export default function Separador({ edicao, realizador }) {
               router.query.separador === 'debates' ? <Debates sessoes={edicao[0].acf.sessao_repetidor} /> :
                 router.query.separador === 'leituras' ? <Leituras leituras={edicao[0].acf.leituras} /> :
                   router.query.separador === 'quem-fez' ? <QuemFez quemFez={edicao[0].acf.quem_fez} /> :
-                    realizador && <Realizador realizador={realizador[0]} />
+                    realizador && <Realizador realizador={realizador[0]} edicoes={edicoes}/>
         }
       />
     </div>
@@ -72,12 +72,14 @@ export async function getStaticPaths(prams) {
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const { separador } = params;
+  const edicoes = await getAllEdicoes();
   const edicao = await getEdicao(slug)
   const realizador = await getRealizador(separador)
   return {
     props: {
       edicao,
-      realizador
+      realizador,
+      edicoes
     },
     revalidate: 10,
   }
