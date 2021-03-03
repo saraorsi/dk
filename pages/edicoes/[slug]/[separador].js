@@ -10,6 +10,7 @@ import Realizador from "../../../src/components/edicao/Realizador"
 
 export default function Separador({ edicao, realizador }) {
   const router = useRouter()
+  console.log(realizador);
   return (
     <div>
       <EdicaoLayout
@@ -27,60 +28,7 @@ export default function Separador({ edicao, realizador }) {
   )
 }
 
-
-
-// export async function getStaticPaths() {
-
-//   const edicoes = [
-//     {    
-//       slug: 'floresta-de-signos',
-//       separador: 'programa'
-//     },
-//     {    
-//       slug: 'floresta-de-signos',
-//       separador: 'notas-de-intencao'
-//     },
-//     {    
-//       slug: 'floresta-de-signos',
-//       separador: 'debates'
-//     },
-//     {    
-//       slug: 'floresta-de-signos',
-//       separador: 'leituras'
-//     },
-//     {    
-//       slug: 'floresta-de-signos',
-//       separador: 'quem-fez'
-//     },
-//     {    
-//       slug: 'todas-as-fronteiras',
-//       separador: 'programa'
-//     },
-//     {    
-//       slug: 'todas-as-fronteiras',
-//       separador: 'notas-de-intencao'
-//     },
-//     {    
-//       slug: 'todas-as-fronteiras',
-//       separador: 'debates'
-//     },
-//     {    
-//       slug: 'todas-as-fronteiras',
-//       separador: 'leituras'
-//     },
-//     {    
-//       slug: 'todas-as-fronteiras',
-//       separador: 'quem-fez'
-//     }
-//   ]
-//   const paths = edicoes.map(post => ({ params: { slug: post.slug, separador: post.separador} }))
-//   return {
-//     paths,
-//     fallback: false
-//   }
-// }
-
-export async function getStaticPaths() {
+export async function getStaticPaths(prams) {
   const edicoes = await getAllEdicoes();
   const separadores = [
     {
@@ -97,8 +45,13 @@ export async function getStaticPaths() {
     },
     {
       separador: 'quem-fez'
+    },
+    {
+      separador: 'andre-gil-mata'
     }
   ]
+
+
   const paths = [];
   edicoes.forEach(function (edicao) {
     separadores.forEach(function (separador) {
