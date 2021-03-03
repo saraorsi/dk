@@ -46,17 +46,22 @@ export async function getStaticPaths(prams) {
     {
       separador: 'quem-fez'
     },
-    {
-      separador: 'andre-gil-mata'
-    }
   ]
+
+
+
+
 
 
   const paths = [];
   edicoes.forEach(function (edicao) {
+    const participantes = edicao.acf.participantes;
+    participantes && participantes.forEach(function (participante) {
+      paths.push({ params: { 'slug': edicao.slug, 'separador': participante.post_name } })
+    });
     separadores.forEach(function (separador) {
       paths.push({ params: { 'slug': edicao.slug, 'separador': separador.separador } })
-    })
+    });
   });
   return {
     paths,
