@@ -1,13 +1,36 @@
+import { getAllRealizadores } from "../../lib/api"
+import Cineastas from "../../src/components/indice/Cineastas"
+import IndiceLayout from "../../src/theme/Layout/indiceLayout"
 
 
-function Indice() {
+
+export default function Indice({realizadores}) {
+
 
   return (
-    <div>
-      indice
-    </div>
+    <IndiceLayout
+    titleLeft={
+      'edições'
+    }
+    contentLeft={'hello'}
+    titleRight={
+      ''
+    }
+    contentRight={<Cineastas realizadores={realizadores}/>}
+  />
   )
 }
 
 
-export default Indice;
+
+
+
+export async function getStaticProps({ params }) {
+  const realizadores = await getAllRealizadores()
+  return {
+    props: {
+      realizadores,
+    },
+    revalidate: 10,
+  }
+}
