@@ -14,6 +14,15 @@ export const MenuWrapper = styled.div`
     color: ${({ theme }) => theme.colors.background.main.color};
 `
 
+MenuWrapper.Search = styled.div`
+    margin-top: .75rem;
+    text-align: center;
+    img{
+        width: 1rem;
+        height: auto;
+    }
+`
+
 MenuWrapper.Logo = styled.div`
     display:block;
     -webkit-transform: rotate(-90deg); 

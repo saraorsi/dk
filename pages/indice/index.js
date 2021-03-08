@@ -23,10 +23,9 @@ export default function Indice({realizadores}) {
 
 
 
-
-
 export async function getStaticProps({ params }) {
   const realizadores = await getAllRealizadores()
+
   return {
     props: {
       realizadores,
