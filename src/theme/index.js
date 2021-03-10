@@ -12,7 +12,19 @@ export const colors = {
       },
     },
   };
+
+
+  export const fonts = {
+    alpina: {
+      medium: 'font-size: .8rem',
+      small: 'font-size: .6rem',
+    },
+    pathos: {
+      small: 'font-family: "Pathos"; font-size: .5rem',
+    }
+  };
   
   export default {
     colors,
+    fonts
   }; 

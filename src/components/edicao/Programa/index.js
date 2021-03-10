@@ -12,8 +12,8 @@ export default function Programa({ sessoes }) {
     return (
         <ProgamaWrapper>
             {sessoes && sessoes.map(({ dia, numero, turno, filmes, debates }, i) => {
-     
-                
+
+
 
                 if (diaActual != dia) {
                     diaNovo = true; diaActual = dia;
@@ -36,27 +36,31 @@ export default function Programa({ sessoes }) {
 
                             {filmes && filmes.map((filme) => {
 
-                                const[accordion, setAccordion] = useState(false);
+                                const [accordion, setAccordion] = useState(false);
 
-                                function toggle(){
+                                function toggle() {
                                     setAccordion(!accordion)
-                                  }
+                                }
                                 return (
                                     <FilmeWrapper key={filme.filme_titulo}>
                                         <Accordion.Btn onClick={toggle}>
-                                       {filme.filme_titulo} 
-                                       <FilmeWrapper.Info>
-                                       {filme.filme_ano ? `, ${filme.filme_ano}` : null}{filme.filme_duracao ? `, ${filme.filme_duracao}min` : null}
-                                       </FilmeWrapper.Info>
-                                       {filme.realizadores && filme.realizadores.map(realizador => {
+                                            {filme.filme_titulo}
+                                            <FilmeWrapper.Info>
+                                                {filme.filme_ano ? `, ${filme.filme_ano}` : null}{filme.filme_duracao ? `, ${filme.filme_duracao}min` : null}
+                                            </FilmeWrapper.Info>
+                                            {filme.realizadores && filme.realizadores.map(realizador => {
                                                 return (
                                                     <FilmeWrapper.Realizador>{realizador.post_title}</FilmeWrapper.Realizador>
-                                                )})}
+                                                )
+                                            })}
                                         </Accordion.Btn>
-                                        <Accordion.Content className={`${accordion == true ? 'open' : 'close' }`}>
-                                            <FilmeWrapper.Sinopse dangerouslySetInnerHTML={{ __html: filme.filme_sinopse }}>
-                                            </FilmeWrapper.Sinopse>
-                                        </Accordion.Content>
+
+                                        {filme.filme_sinopse &&
+                                            <Accordion.Content className={`${accordion == true ? 'open' : 'close'}`}>
+                                                <FilmeWrapper.Sinopse dangerouslySetInnerHTML={{ __html: filme.filme_sinopse }}>
+                                                </FilmeWrapper.Sinopse>
+                                            </Accordion.Content>
+                                        }
                                     </FilmeWrapper>
                                 )
                             })}

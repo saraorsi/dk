@@ -8,6 +8,10 @@ export const DebatesItem = styled.div`
 
 DebatesItem.Title = styled.div`
     cursor: pointer;
+    span{
+        ${({ theme }) => theme.fonts.alpina.medium};
+        margin-right: .3rem;
+    }
 `
 
 DebatesItem.Content = styled.div`
@@ -17,6 +21,7 @@ DebatesItem.Content = styled.div`
     }
 `
 DebatesItem.Text = styled.div`
+    padding-top: .5rem;
     font-size: .5rem;
     line-height: 1.3em;
     font-family: 'Pathos';
@@ -28,20 +33,19 @@ export default function Debates({ sessoes }) {
                 return (
                     <div>
                         {sessao.debates && sessao.debates.map((debate) => {
-                                    const[accordion, setAccordion] = useState(false);
-
-                                    function toggle(){
-                                        if (accordion == true) {
-                                          return setAccordion(false)
-                                        }
-                                        setAccordion(true)
-                                      }
+                            const [accordion, setAccordion] = useState(false);
+                            function toggle() {
+                                setAccordion(!accordion)
+                            }
+    
                             return (
                                 <DebatesItem key={debate.debate_titulo}>
-                                    <DebatesItem.Title onClick={toggle}>{debate.debate_titulo}</DebatesItem.Title>
-                                    <DebatesItem.Content className={`${accordion == true ? 'open' : 'close' }`}> 
-                                        <DebatesItem.Text dangerouslySetInnerHTML={{ __html: debate.debate_sinopse}}></DebatesItem.Text>
+                                    <DebatesItem.Title onClick={toggle}><span>#{i + 1}</span>{debate.debate_titulo}</DebatesItem.Title>
+                                    {debate.debate_sinopse &&
+                                    <DebatesItem.Content className={`${accordion == true ? 'open' : 'close'}`}>
+                                        <DebatesItem.Text dangerouslySetInnerHTML={{ __html: debate.debate_sinopse }}></DebatesItem.Text>
                                     </DebatesItem.Content>
+                                    }
                                 </DebatesItem>
                             )
                         })}

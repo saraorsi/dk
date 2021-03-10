@@ -21,7 +21,6 @@ RealizadorWrapper.Filme= styled.div`
 export default function Realizador({ realizador, edicoes }) {
 
     const realizadorID = realizador.id;
-
     const filmesRealizador = [];
 
     edicoes.map(  

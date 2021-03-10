@@ -2,13 +2,11 @@ import IndexLayout from '../src/theme/Layout/indexLayout'
 import { getAllEdicoes, getAllDestaques } from '../lib/api'
 import Destaques from '../src/components/home/Destaques'
 import Menu from '../src/components/home/Menu'
-import { useContext } from 'react';
-import { EdicoesContext } from '../src/context/EdicoesContext'
+
 
 
 function Home({ edicoes, destaques}) {
-  const edicoesContext = useContext(EdicoesContext);
-  console.log(edicoesContext)
+
 
   edicoes.sort((a, b) => (a.acf.ano > b.acf.ano ? -1 : 1))
   return (

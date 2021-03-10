@@ -3,21 +3,20 @@ import styled, { css } from 'styled-components'
 export const ProgamaWrapper = styled.div`
 `
 
-
 export const ProgramaDia = styled.div`
-    font-size: .7rem;
+       ${({ theme }) => theme.fonts.alpina.medium};
     border-bottom: 1px dashed ${({ theme }) => theme.colors.primary.main.color};
     padding: .6rem 1rem;
 `
 
 export const SessaoWrapper = styled.div`
    border-bottom: 1px dashed ${({ theme }) => theme.colors.primary.main.color};
-padding: .3rem 1rem .6rem;
+    padding: .3rem 1rem .6rem;
 `
 
 SessaoWrapper.Sessao = styled.div`
     text-align: right;
-    font-size: .5rem;
+    ${({ theme }) => theme.fonts.alpina.small};
 `
 
 export const FilmeWrapper = styled.div`
@@ -29,26 +28,25 @@ export const FilmeWrapper = styled.div`
 
 FilmeWrapper.Info = styled.div`
     display: inline;
-    font-size: .7rem;
+    ${({ theme }) => theme.fonts.alpina.medium};
 `
 
 FilmeWrapper.Realizador = styled.div`
     margin-top: -.2rem;
-    font-size: .7rem;
+    ${({ theme }) => theme.fonts.alpina.medium};
 `
 
 FilmeWrapper.Sinopse = styled.div`
     margin-top: .35rem;
     margin-bottom: .7rem;
-    font-size: .5rem;
     line-height: 1.3em;
-    font-family: 'Pathos';
+    ${({ theme }) => theme.fonts.pathos.small};
 `
 
 export const DebatesWrapper = styled.div`
-margin-top: .3rem;
-   font-size: .5rem;
-line-height: 1.3em;
+    margin-top: .3rem;
+    ${({ theme }) => theme.fonts.alpina.small};
+    line-height: 1.3em;
 `
 
 

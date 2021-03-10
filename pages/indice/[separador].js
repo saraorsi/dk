@@ -2,9 +2,9 @@ import IndiceLayout from "../../src/theme/Layout/indiceLayout"
 import { useRouter } from 'next/router'
 import Cineastas from "../../src/components/indice/Cineastas"
 import Filmes from "../../src/components/indice/Filmes"
-import { getAllRealizadores } from "../../lib/api"
+import { getAllEdicoes, getAllRealizadores } from "../../lib/api"
 
-export default function Separador({realizadores}) {
+export default function Separador({realizadores, edicoes}) {
     const router = useRouter()
     return (
         <IndiceLayout
@@ -18,7 +18,7 @@ export default function Separador({realizadores}) {
         contentRight={
     
         router.query.separador === 'cineasta-e-artistas' ? <Cineastas realizadores={realizadores}/> :
-        router.query.separador === 'filmes' ?  <Filmes /> : '' }
+        router.query.separador === 'filmes' ?  <Filmes edicoes={edicoes} /> : '' }
       />
     )
 }
@@ -49,9 +49,11 @@ export async function getStaticPaths(prams) {
 
 export async function getStaticProps({ params }) {
   const realizadores = await getAllRealizadores();
+  const edicoes = await getAllEdicoes();
   return {
     props: {
       realizadores,
+      edicoes
     },
     revalidate: 10,
   }
