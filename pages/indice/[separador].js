@@ -24,7 +24,7 @@ export default function Separador({realizadores, edicoes}) {
 }
 
 
-export async function getStaticPaths(prams) {
+export async function getStaticPaths() {
   const separadores = [
     {
       separador: 'cineasta-e-artistas'
@@ -32,11 +32,18 @@ export async function getStaticPaths(prams) {
     {
       separador: 'filmes'
     },
+    {
+      separador: 'debates'
+    },
+    {
+      separador: 'leituras'
+    },
   ]
   const paths = [];
   separadores.forEach(function (separador) {
-    paths.push({ params: { 'separador': separador.separador } })
+    paths.push({ params: { separador: separador.separador } })
   });
+
 
   return {
     paths,

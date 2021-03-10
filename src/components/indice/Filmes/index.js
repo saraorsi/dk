@@ -53,26 +53,21 @@ export default function Filmes(props) {
 
     filmes.sort((a, b) => (a[0].filme_titulo > b[0].filme_titulo ? 1 : -1))
 
-    const [active, setActive] = React.useState(0);
 
-    const eventHandler = (e, index) => {
-        e.preventDefault();
-        setActive(index);
-    }
 
     return (
         <div>
             {filmes.map((filme, index) => {
                 return (
                     <FilmesItem key={index}>
-                        <FilmesItem.Header onClick={(e) => eventHandler(e, index)}>
+                        <FilmesItem.Header>
                             <FilmesItem.Titulo>{filme[0].filme_titulo}</FilmesItem.Titulo>
                             <FilmesItem.Realizador>
                                 {filme[0].realizadores && filme[0].realizadores.map(realizador => (<span key={realizador.id}>{realizador.post_title}</span>))}
                             </FilmesItem.Realizador>
                         </FilmesItem.Header>
                         {filme[0].filme_sinopse &&
-                            <FilmesItem.Content className={`${active == index ? 'open' : 'close'}`}>
+                            <FilmesItem.Content>
                                 <FilmesItem.Sinopse dangerouslySetInnerHTML={{ __html: filme[0].filme_sinopse }}>
                                 </FilmesItem.Sinopse>
                             </FilmesItem.Content>

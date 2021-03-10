@@ -27,7 +27,7 @@ export default function Separador({ edicao, realizador, edicoes }) {
   )
 }
 
-export async function getStaticPaths(prams) {
+export async function getStaticPaths() {
   const edicoes = await getAllEdicoes();
   const separadores = [
     {
