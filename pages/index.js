@@ -37,7 +37,7 @@ export async function getStaticProps() {
       edicoes,
       destaques
     },
-    revalidate: 10
+    revalidate: 1
   }
 }
 

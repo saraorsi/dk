@@ -44,7 +44,7 @@ export default function Filmes(props) {
         edicoes.map(({ slug, acf: { sessao_repetidor } }) => {
             const edicao = slug;
             sessao_repetidor && sessao_repetidor.map(({ filmes }) => {
-                filmes.map(filme => {
+                filmes && filmes.map(filme => {
                     setFilmes(oldFilmes => [...oldFilmes, [filme, edicao]]);
                 })
             })
