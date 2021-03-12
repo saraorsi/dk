@@ -40,7 +40,7 @@ export default function Cineastas({ realizadores }) {
                 setAccordion(!accordion)
             }
             return (
-                <RealizadorWrapper>
+                <RealizadorWrapper key={realizador.id}>
                     <RealizadorWrapper.Title  onClick={toggle}>{realizador.title.rendered}</RealizadorWrapper.Title>
                     <RealizadorWrapper.Content className={`${accordion == true ? 'open' : 'close'}`}>
                         <div dangerouslySetInnerHTML={{ __html: realizador.acf.biografia }}></div>
