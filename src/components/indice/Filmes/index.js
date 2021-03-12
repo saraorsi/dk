@@ -37,7 +37,7 @@ FilmesItem.Sinopse = styled.div`
 
 
 export default function Filmes(props) {
-    const [filmes, setFilmes] = React.useState([]);
+    const [filmesArray, setFilmes] = React.useState([]);
     const edicoes = props.edicoes;
 
     React.useEffect(() => {
@@ -51,13 +51,13 @@ export default function Filmes(props) {
         })
     }, []);
 
-    filmes.sort((a, b) => (a[0].filme_titulo > b[0].filme_titulo ? 1 : -1))
+    filmesArray.sort((a, b) => (a[0].filme_titulo > b[0].filme_titulo ? 1 : -1))
 
 
 
     return (
         <div>
-            {filmes.map((filme) => {
+            {filmesArray.map((filme) => {
                 return (
                     <FilmesItem key={filme[0].filme_titulo}>
                         <FilmesItem.Header>
