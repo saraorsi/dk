@@ -24,33 +24,33 @@ export default function Separador({realizadores, edicoes}) {
 }
 
 
-export async function getStaticPaths() {
-  const separadores = [
-    {
-      separador: 'cineasta-e-artistas'
-    },
-    {
-      separador: 'filmes'
-    },
-    {
-      separador: 'debates'
-    },
-    {
-      separador: 'leituras'
-    },
-  ]
-  const paths = [];
-  separadores.forEach(function (separador) {
-    paths.push({ params: { separador: separador.separador } })
-  });
+// export async function getStaticPaths() {
+//   const separadores = [
+//     {
+//       separador: 'cineasta-e-artistas'
+//     },
+//     {
+//       separador: 'filmes'
+//     },
+//     {
+//       separador: 'debates'
+//     },
+//     {
+//       separador: 'leituras'
+//     },
+//   ]
+//   const paths = [];
+//   separadores.forEach(function (separador) {
+//     paths.push({ params: { separador: separador.separador } })
+//   });
 
 
-  return {
-    paths,
-    fallback: true
-  }
+//   return {
+//     paths,
+//     fallback: true
+//   }
   
-}
+// }
 
 
 
