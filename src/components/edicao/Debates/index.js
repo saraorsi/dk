@@ -27,26 +27,32 @@ DebatesItem.Text = styled.div`
     font-family: 'Pathos';
 `
 export default function Debates({ sessoes }) {
+
+    const [accordion, setAccordion] = useState([]);
+
+    const eventHandler = (e, id) => {
+        e.preventDefault();
+        setAccordion(oldstate => [...oldstate, id])
+    }
+    
+    let indice = 1;
     return (
         <div>
             {sessoes && sessoes.map((sessao, i) => {
                 return (
-                    <div>
-                        {sessao.debates && sessao.debates.map((debate) => {
-                            const [accordion, setAccordion] = useState(false);
-                            function toggle() {
-                                setAccordion(!accordion)
-                            }
-    
+                    <div key={i}>
+                        {sessao.debates && sessao.debates.map((debate, i)=> {   
+                            const id = indice++;
                             return (
-                                <DebatesItem key={debate.debate_titulo}>
-                                    <DebatesItem.Title onClick={toggle}><span>#{i + 1}</span>{debate.debate_titulo}</DebatesItem.Title>
+                                <DebatesItem key={id}>
+                                    <DebatesItem.Title onClick={(e) => eventHandler(e, id)}><span>#{id}</span>{debate.debate_titulo}</DebatesItem.Title>
                                     {debate.debate_sinopse &&
-                                    <DebatesItem.Content className={`${accordion == true ? 'open' : 'close'}`}>
+                                    <DebatesItem.Content>
                                         <DebatesItem.Text dangerouslySetInnerHTML={{ __html: debate.debate_sinopse }}></DebatesItem.Text>
                                     </DebatesItem.Content>
                                     }
                                 </DebatesItem>
+                          
                             )
                         })}
                     </div>

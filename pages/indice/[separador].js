@@ -54,7 +54,19 @@ export async function getStaticPaths() {
 
 
 
-export async function getStaticProps({ params }) {
+// export async function getStaticProps({ params }) {
+//   const realizadores = await getAllRealizadores();
+//   const edicoes = await getAllEdicoes();
+//   return {
+//     props: {
+//       realizadores,
+//       edicoes
+//     },
+//     revalidate: 10,
+//   }
+// }
+
+export async function getServerSideProps({ params }) {
   const realizadores = await getAllRealizadores();
   const edicoes = await getAllEdicoes();
   return {
@@ -62,6 +74,6 @@ export async function getStaticProps({ params }) {
       realizadores,
       edicoes
     },
-    revalidate: 10,
   }
 }
+

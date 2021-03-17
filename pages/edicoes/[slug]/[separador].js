@@ -27,43 +27,60 @@ export default function Separador({ edicao, realizador, edicoes }) {
   )
 }
 
-export async function getStaticPaths() {
-  const edicoes = await getAllEdicoes();
-  const separadores = [
-    {
-      separador: 'programa'
-    },
-    {
-      separador: 'notas-de-intencao'
-    },
-    {
-      separador: 'debates'
-    },
-    {
-      separador: 'leituras'
-    },
-    {
-      separador: 'quem-fez'
-    },
-  ]
-  const paths = [];
-  edicoes.forEach(function (edicao) {
-    const participantes = edicao.acf.participantes;
-    participantes && participantes.forEach(function (participante) {
-      paths.push({ params: { 'slug': edicao.slug, 'separador': participante.post_name } })
-    });
-    separadores.forEach(function (separador) {
-      paths.push({ params: { 'slug': edicao.slug, 'separador': separador.separador } })
-    });
-  });
-  return {
-    paths,
-    fallback: true
-  }
-}
+// export async function getStaticPaths() {
+//   const edicoes = await getAllEdicoes();
+//   const separadores = [
+//     {
+//       separador: 'programa'
+//     },
+//     {
+//       separador: 'notas-de-intencao'
+//     },
+//     {
+//       separador: 'debates'
+//     },
+//     {
+//       separador: 'leituras'
+//     },
+//     {
+//       separador: 'quem-fez'
+//     },
+//   ]
+//   const paths = [];
+//   edicoes.forEach(function (edicao) {
+//     const participantes = edicao.acf.participantes;
+//     participantes && participantes.forEach(function (participante) {
+//       paths.push({ params: { 'slug': edicao.slug, 'separador': participante.post_name } })
+//     });
+//     separadores.forEach(function (separador) {
+//       paths.push({ params: { 'slug': edicao.slug, 'separador': separador.separador } })
+//     });
+//   });
+//   return {
+//     paths,
+//     fallback: true
+//   }
+// }
 
 
-export async function getStaticProps({ params }) {
+// export async function getStaticProps({ params }) {
+//   const { slug } = params;
+//   const { separador } = params;
+//   const edicoes = await getAllEdicoes();
+//   const edicao = await getEdicao(slug);
+//   const realizador = await getRealizador(separador);
+//   return {
+//     props: {
+//       edicao,
+//       realizador,
+//       edicoes
+//     },
+//     revalidate: 10,
+//   }
+// }
+
+
+export async function  getServerSideProps({ params }) {
   const { slug } = params;
   const { separador } = params;
   const edicoes = await getAllEdicoes();
@@ -75,8 +92,6 @@ export async function getStaticProps({ params }) {
       realizador,
       edicoes
     },
-    revalidate: 10,
   }
 }
-
 

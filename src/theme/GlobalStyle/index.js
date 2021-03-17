@@ -3,7 +3,6 @@ import { normalize } from 'styled-normalize'
 
 const GlobalStyle = createGlobalStyle`
 
-
     @font-face {  
         font-family: 'Alpina';  
         font-weight: 400; 
@@ -41,6 +40,9 @@ const GlobalStyle = createGlobalStyle`
     :root {
         font-size: 2.5vw;
         line-height: 1.2em;
+        --color-background: #A4F7C6;
+        --color-hover: #231F20;
+        --color: #231F20;
     }
 
     a{
@@ -53,8 +55,8 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         min-height: 100vh;
         width: 100%;
-        background-color: ${({ theme }) => theme.colors.background.main.color};
-        color: ${({ theme }) => theme.colors.primary.main.color};
+        background-color: var(--color-background);
+        color: var(--color);
         font-family: 'Alpina';
     }
     #__next {
