@@ -1,36 +1,39 @@
-import styled from 'styled-components'
 import { useState } from 'react';
-import { Container, Item } from './styles';
+import { DebatesItem } from './styles';
+
 
 
 export function Debates({ sessoes }) {
 
 
     return (
-        <Container>
+        <>
             {sessoes && sessoes.map((sessao, i) => {
                 return (
                     <div key={i}>
                         {sessao.debates && sessao.debates.map((debate, i)=> {   
                             return (
-                                <Item key={i}>
-                                    <Item.Visible>
-                                        <div className="title">{debate.debate_titulo}</div>
-                                        <div className="sub-title">{debate.debate_titulo}</div>
-                                    </Item.Visible>
+                                <DebatesItem key={i}>
+                                    <div>
+                                        <div className="debates-title">{debate.debate_titulo}</div>
+                                        {debate.debate_subtitulo &&
+                                            <div className="debates-subtitle">{debate.debate_subtitulo}</div>
+                                        }
+                    
+                                    </div>
                                     {debate.debate_sinopse &&
-                                    <Item.Invisible>
-                                        <div dangerouslySetInnerHTML={{ __html: debate.debate_sinopse }}></div>
-                                    </Item.Invisible>
+                                    <div>
+                                        <div className="debates-text" dangerouslySetInnerHTML={{ __html: debate.debate_sinopse }}></div>
+                                    </div>
                                     }
-                                </Item>
+                                </DebatesItem>
                           
                             )
                         })}
                     </div>
                 )
             })}
-        </Container>
+        </>
 
     )
 

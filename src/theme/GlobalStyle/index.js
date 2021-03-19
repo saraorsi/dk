@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 2.5vw;
         line-height: 1.2em;
         --color-background: #A4F7C6;
-        --color-hover: #231F20;
+        --color-hover: rgba( 0, 0, 0, 0.2);
         --color: #231F20;
         --alpina-medium: .8rem;
     }

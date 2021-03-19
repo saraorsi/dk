@@ -38,6 +38,10 @@ Column.Content = styled.div`
   overflow-y: scroll;
   li{
       border-bottom: 1px dashed ${({ theme }) => theme.colors.primary.main.color};
+      transition: background-color .2s;
+      &:hover{
+        background-color: var(--color-hover);
+      }
     a{
       display: inline-block;
       width: 100%;

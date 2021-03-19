@@ -1,4 +1,4 @@
-import { Column } from './style/ColumnLeft'
+import { Column } from './styles'
 
 export default function ColumnLeft({titleLeft, contentLeft}){
     return(

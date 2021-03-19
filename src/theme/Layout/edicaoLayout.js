@@ -44,9 +44,9 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
 
   const menus = [
     {
-      link: `/edicoes/${router.query.slug}/notas-de-intencao`,
-      titulo: 'Notas de intenção',
-      slug: 'notas-de-intencao'
+      link: `/edicoes/${router.query.slug}/introducao`,
+      titulo: 'Introdução',
+      slug: 'introducao'
     },
     {
       link: `/edicoes/${router.query.slug}/programa`,
@@ -89,7 +89,7 @@ function EdicaoLayout({ edicao, titleLeft, titleRight, contentRight }) {
           <>
           <MenuWapprer>
             {menus.map((menu) => (
-              <li key={menu.link} className={`${selected == menu.slug ? 'active' : null}`} onClick={() => toggle(menu.slug)}>
+              <li key={menu.link} className={`${selected == menu.slug ? 'active' : null} `} onClick={() => toggle(menu.slug)}>
                 <Link href={menu.link}>
                   <a>{menu.titulo}</a>
                 </Link>

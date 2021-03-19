@@ -3,7 +3,8 @@ import EdicaoLayout from "../../../src/theme/Layout/edicaoLayout"
 import { getEdicao, getAllEdicoes, } from "../../../lib/api"
 
 import { useRouter } from 'next/router'
-import Notas from '../../../src/components/edicao/Notas'
+import Programa from '../../../src/components/edicao/Programa'
+
 
 
 function Edicao({ edicao }) {
@@ -13,7 +14,7 @@ function Edicao({ edicao }) {
     <EdicaoLayout
     edicao={edicao}
     contentRight={
-      <Notas content={edicao[0].acf.sinopse} />
+      <Programa sessoes={edicao[0].acf.sessao_repetidor} />
     }
     />
   )
