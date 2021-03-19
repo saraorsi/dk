@@ -20,7 +20,7 @@ export const colors = {
       small: 'font-size: .6rem',
     },
     pathos: {
-      small: 'font-family: "Pathos"; font-size: .5rem',
+      small: 'font-family: "Pathos"; font-size: .5rem; line-height: 1.4em;',
     }
   };
   

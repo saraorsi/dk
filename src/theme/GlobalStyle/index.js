@@ -43,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
         --color-background: #A4F7C6;
         --color-hover: #231F20;
         --color: #231F20;
+        --alpina-medium: .8rem;
     }
 
     a{

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const ProgamaWrapper = styled.div`
 `
@@ -27,7 +27,7 @@ export const FilmeWrapper = styled.div`
 `
 
 FilmeWrapper.Info = styled.div`
-    display: inline;
+    display: block;
     ${({ theme }) => theme.fonts.alpina.medium};
 `
 

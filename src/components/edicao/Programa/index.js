@@ -1,4 +1,4 @@
-import { ProgamaWrapper, ProgramaDia, SessaoWrapper, FilmeWrapper, DebatesWrapper, Accordion } from './style/ProgramaWrapper'
+import { ProgamaWrapper, ProgramaDia, SessaoWrapper, FilmeWrapper, DebatesWrapper, Accordion } from './styles'
 import Moment from 'react-moment';
 import moment from 'moment';
 import { useState } from 'react';
@@ -46,7 +46,7 @@ export default function Programa({ sessoes }) {
                                         <Accordion.Btn onClick={toggle}>
                                             {filme.filme_titulo}
                                             <FilmeWrapper.Info>
-                                                {filme.filme_ano ? `, ${filme.filme_ano}` : null}{filme.filme_duracao ? `, ${filme.filme_duracao}min` : null}
+                                                {filme.filme_ano ? `${filme.filme_ano}` : null}{filme.filme_duracao ? `, ${filme.filme_duracao}min` : null}
                                             </FilmeWrapper.Info>
                                             {filme.realizadores && filme.realizadores.map(realizador => {
                                                 return (
