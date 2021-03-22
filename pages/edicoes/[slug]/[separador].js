@@ -83,14 +83,12 @@ export default function Separador({ edicao, realizador}) {
 export async function  getServerSideProps({ params }) {
   const { slug } = params;
   const { separador } = params;
-  const edicoes = await getAllEdicoes();
   const edicao = await getEdicao(slug);
   const realizador = await getRealizador(separador);
   return {
     props: {
       edicao,
       realizador,
-      edicoes
     },
   }
 }
