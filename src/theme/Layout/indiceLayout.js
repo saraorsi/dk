@@ -29,9 +29,9 @@ function Layout({ titleLeft, contentLeft, titleRight, contentRight }) {
 
     const menus = [
         {
-          link: `/indice/cineasta-e-artistas`,
-          titulo: 'Cineastas e Artistas',
-          slug: 'cineasta-e-artistas'
+          link: `/indice/cineastas`,
+          titulo: 'Cineastas',
+          slug: 'cineastas'
         },
         {
             link: `/indice/filmes`,

@@ -17,7 +17,7 @@ export default function Separador({realizadores, edicoes}) {
         }
         contentRight={
     
-        router.query.separador === 'cineasta-e-artistas' ? <Cineastas realizadores={realizadores}/> :
+        router.query.separador === 'cineasta' ? <Cineastas realizadores={realizadores}/> :
         router.query.separador === 'filmes' ?  <Filmes edicoes={edicoes} /> : '' }
       />
     )
@@ -27,7 +27,7 @@ export default function Separador({realizadores, edicoes}) {
 // export async function getStaticPaths() {
 //   const separadores = [
 //     {
-//       separador: 'cineasta-e-artistas'
+//       separador: 'cineasta'
 //     },
 //     {
 //       separador: 'filmes'
