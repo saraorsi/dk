@@ -4,6 +4,7 @@ import Head from 'next/head';
 import GlobalStyle from '../src/theme/GlobalStyle/'
 
 
+
 export default function MyApp({ Component, pageProps}) {
 
  return (
@@ -15,6 +16,7 @@ export default function MyApp({ Component, pageProps}) {
           <link rel="preload" as="font" href="/fonts/GT-Alpina-Fine-Condensed-Medium.woff2" type="font/woff2" crossOrigin="anonymous" />
       </Head>
       <ThemeProvider theme={theme}>
+     
       <GlobalStyle />
         <Component {...pageProps}/>
       </ThemeProvider>

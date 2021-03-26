@@ -23,6 +23,8 @@ export default function Realizador({ realizador, sessoes }) {
     const realizadorID = realizador.id;
     const filmesRealizador = [];
 
+    
+
 
     sessoes.map( sessao => {
         const filmes = sessao.filmes

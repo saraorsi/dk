@@ -9,22 +9,27 @@ function Home({ edicoes, destaques}) {
 
 
   edicoes.sort((a, b) => (a.acf.ano > b.acf.ano ? -1 : 1))
+
   return (
     <IndexLayout
       titleLeft={
         'edições'
       }
-      contentLeft={edicoes.map((post) => (
+      contentLeft={
+        edicoes.map((post) => (
         <li key={post.id}>
           <Menu key={post.slug} post={post}  />
         </li>
-      ))}
+      ))
+      }
       titleRight={
         'destaques'
       }
-      contentRight={destaques.map(destaque => (
+      contentRight={
+        destaques.map(destaque => (
         <Destaques key={destaque.id} destaque={destaque} />
-      ))}
+      ))
+      }
     />
   )
 }
